@@ -1,0 +1,4 @@
+# helyi futtatáshoz (nem kell a deploy-hoz)
+serve.py
+server.log
+.DS_Store

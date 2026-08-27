@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vimara Design Kft – We manufacture your ideas · Varróműhely és varroda, Hatvan</title>
+<meta name="description" content="Vimara Design Kft – családi varroda Hatvanban. Ruhajavítás, átalakítás, lakástextil és ipari bérgyártás. Több mint 30 év szakmai tapasztalat, modern ipari géppark. We manufacture your ideas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16140F;          /* közel-fekete, meleg */
+  --ink-soft:#2A2722;
+  --cream:#FAF7F1;        /* világos háttér */
+  --beige:#ECE5D8;        /* meleg bézs */
+  --beige-2:#E0D7C7;
+  --bronze:#9C8765;       /* elegáns bronz/taupe hangsúly */
+  --bronze-dark:#7E6C4E;
+  --line:rgba(22,20,15,.12);
+  --muted:rgba(22,20,15,.62);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--cream);line-height:1.7;font-weight:300;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:500;line-height:1.12;letter-spacing:.01em}
+img{max-width:100%}
+a{color:inherit}
+.container{max-width:1120px;margin:0 auto;padding:0 28px}
+.kicker{text-transform:uppercase;letter-spacing:.32em;font-size:.72rem;font-weight:500;color:var(--bronze)}
+.hr-line{height:1px;background:var(--line);border:0;margin:0}
+
+/* NAV */
+nav{position:sticky;top:0;background:rgba(250,247,241,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:100}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{font-family:'Fraunces',serif;font-weight:600;font-size:1.35rem;letter-spacing:.02em;color:var(--ink);text-decoration:none}
+.logo span{color:var(--bronze)}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{color:var(--ink-soft);text-decoration:none;font-size:.9rem;font-weight:400;letter-spacing:.02em;transition:color .2s}
+.nav-links a:hover{color:var(--bronze)}
+.btn{display:inline-block;background:var(--ink);color:var(--cream);padding:.72rem 1.6rem;border-radius:2px;text-decoration:none;font-weight:500;font-size:.9rem;letter-spacing:.02em;transition:background .25s,border-color .25s;border:1px solid var(--ink);cursor:pointer}
+.btn:hover{background:var(--bronze-dark);border-color:var(--bronze-dark)}
+.btn-outline{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.btn-outline:hover{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.btn-bronze{background:var(--bronze);border-color:var(--bronze);color:#fff}
+.btn-bronze:hover{background:var(--bronze-dark);border-color:var(--bronze-dark)}
+
+/* HERO */
+header.hero{position:relative;padding:96px 0 78px;border-bottom:1px solid var(--line);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center;position:relative;z-index:2}
+.hero h1{font-size:clamp(2.6rem,5.4vw,4.2rem);font-weight:500;margin:20px 0 22px}
+.hero .lead{font-size:1.18rem;color:var(--muted);max-width:32em;margin-bottom:34px;font-weight:300}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.hero-card{background:var(--ink);color:var(--cream);border-radius:3px;padding:38px 34px}
+.hero-card .kicker{color:var(--bronze)}
+.hero-card h3{color:var(--cream);font-size:1.35rem;margin:10px 0 20px;font-weight:500}
+.hero-card ul{list-style:none;display:grid;gap:15px}
+.hero-card li{display:flex;gap:13px;align-items:flex-start;font-size:.94rem;font-weight:300;color:rgba(250,247,241,.86)}
+.hero-card li::before{content:"—";color:var(--bronze);flex-shrink:0;font-weight:600}
+
+/* brand ribbon */
+.ribbon{border-bottom:1px solid var(--line);background:var(--beige)}
+.ribbon .container{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:16px;padding-bottom:16px;flex-wrap:wrap}
+.ribbon .tag{font-family:'Fraunces',serif;font-style:italic;font-size:1.05rem;color:var(--ink-soft)}
+.ribbon .meta{font-size:.8rem;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+
+/* SECTIONS */
+section{padding:84px 0}
+section h2{font-size:clamp(1.9rem,3.8vw,2.6rem);font-weight:500;margin-bottom:12px}
+.section-intro{color:var(--muted);max-width:46em;margin-bottom:46px;font-weight:300}
+.alt{background:var(--beige)}
+
+/* SERVICES */
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px}
+.tab{border:1px solid var(--line);background:transparent;color:var(--ink-soft);padding:.6rem 1.25rem;border-radius:999px;font-size:.88rem;cursor:pointer;font-family:inherit;transition:.2s;font-weight:400}
+.tab:hover{border-color:var(--ink)}
+.tab.active{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.svc-group{display:none}
+.svc-group.active{display:block;animation:fade .4s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.svc{background:var(--cream);padding:26px 28px;display:flex;flex-direction:column;gap:6px}
+.alt .svc{background:var(--beige)}
+.svc h3{font-size:1.08rem;font-weight:600;font-family:'Inter',sans-serif;letter-spacing:0}
+.svc p{font-size:.88rem;color:var(--muted);font-weight:300;flex:1}
+.price{font-family:'Fraunces',serif;font-weight:600;color:var(--bronze-dark);font-size:1.18rem;margin-top:4px}
+.note-band{margin-top:38px;background:var(--ink);color:var(--cream);border-radius:3px;padding:26px 32px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.note-band strong{color:#fff;font-weight:500}
+.note-band .kicker{color:var(--bronze)}
+.note-band p{color:rgba(250,247,241,.85);font-weight:300;font-size:.95rem}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:start}
+.about-text p{margin-bottom:18px;color:var(--muted);font-weight:300}
+.about-text p strong{color:var(--ink);font-weight:500}
+.usp{list-style:none;display:grid;gap:16px;counter-reset:usp}
+.usp li{background:var(--beige);border:1px solid var(--line);border-radius:3px;padding:20px 22px;display:flex;gap:16px}
+.alt .usp li{background:var(--cream)}
+.usp .num{font-family:'Fraunces',serif;font-weight:600;color:var(--bronze);font-size:1.5rem;line-height:1;flex-shrink:0}
+.usp li span:last-child{font-size:.93rem;font-weight:300;color:var(--ink-soft)}
+.reviews{display:grid;gap:22px;margin-top:60px}
+blockquote.review{background:var(--beige);border-left:3px solid var(--bronze);border-radius:0 3px 3px 0;padding:28px 30px;font-family:'Fraunces',serif;font-style:italic;font-size:1.15rem;line-height:1.5;color:var(--ink-soft)}
+.alt blockquote.review{background:var(--cream)}
+blockquote footer{font-style:normal;font-family:'Inter',sans-serif;font-weight:500;margin-top:14px;font-size:.88rem;color:var(--muted);letter-spacing:.02em}
+@media(min-width:760px){.reviews{grid-template-columns:1fr 1fr}}
+
+/* MACHINES */
+.machines{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.machine{background:var(--cream);padding:22px 24px}
+.machine .mname{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--ink)}
+.machine .muse{font-size:.82rem;color:var(--muted);font-weight:300;margin-top:4px}
+
+/* FORM / CONTACT */
+.form-wrap{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:start}
+form{display:grid;gap:16px}
+label{font-weight:400;font-size:.85rem;letter-spacing:.02em;color:var(--ink-soft)}
+input,select,textarea{width:100%;padding:.85rem 1rem;border:1px solid var(--line);border-radius:3px;font-family:inherit;font-size:.95rem;background:var(--cream);font-weight:300;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bronze);box-shadow:0 0 0 2px rgba(156,135,101,.18)}
+.contact-list{list-style:none;display:grid;gap:20px}
+.contact-list a{color:var(--bronze-dark);text-decoration:none;font-weight:400;border-bottom:1px solid transparent;transition:.2s}
+.contact-list a:hover{border-bottom-color:var(--bronze-dark)}
+.contact-list .ico{color:var(--bronze);margin-right:8px}
+.hours-table{width:100%;border-collapse:collapse;margin-top:8px}
+.hours-table td{padding:8px 0;border-bottom:1px dashed var(--line);font-size:.95rem;font-weight:300}
+.hours-table td:last-child{text-align:right;font-weight:400}
+.social-row{display:flex;gap:12px;margin-top:8px;flex-wrap:wrap}
+.social-row a{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);padding:.55rem 1.1rem;border-radius:999px;font-size:.85rem;text-decoration:none;color:var(--ink-soft);transition:.2s}
+.social-row a:hover{border-color:var(--ink);color:var(--ink)}
+
+/* FAQ */
+.faq-wrap{max-width:780px}
+details{background:var(--cream);border:1px solid var(--line);border-radius:3px;margin-bottom:14px;padding:4px 26px;transition:.2s}
+details[open]{background:var(--beige)}
+details summary{cursor:pointer;font-weight:400;padding:18px 0;font-size:1.02rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"+";font-family:'Fraunces',serif;font-size:1.4rem;color:var(--bronze);font-weight:400;transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:0 0 20px;color:var(--muted);font-weight:300}
+
+/* FOOTER */
+footer{background:var(--ink);color:rgba(250,247,241,.72);padding:54px 0 38px;font-size:.9rem;font-weight:300}
+.footer-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px}
+footer a{color:rgba(250,247,241,.85);text-decoration:none;border-bottom:1px solid transparent;transition:.2s}
+footer a:hover{color:#fff;border-bottom-color:var(--bronze)}
+footer .fbrand{font-family:'Fraunces',serif;font-size:1.4rem;color:#fff;font-weight:500;letter-spacing:.02em}
+footer .fbrand span{color:var(--bronze)}
+.foot-meta{margin-top:34px;padding-top:22px;border-top:1px solid rgba(250,247,241,.14);font-size:.78rem;color:rgba(250,247,241,.5);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+/* GALLERY */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media(min-width:560px){.gallery{grid-template-columns:repeat(4,1fr)}}
+.gitem{position:relative;margin:0;overflow:hidden;border-radius:3px;background:var(--beige);aspect-ratio:1/1;cursor:pointer}
+.gitem img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.22,.61,.36,1),filter .4s}
+.gitem:hover img{transform:scale(1.06)}
+.gitem figcaption{position:absolute;left:0;right:0;bottom:0;padding:22px 14px 12px;font-size:.78rem;letter-spacing:.02em;color:var(--cream);background:linear-gradient(transparent,rgba(22,20,15,.78));opacity:0;transition:opacity .3s;font-family:'Fraunces',serif;font-style:italic}
+.gitem:hover figcaption{opacity:1}
+/* lightbox */
+.lightbox{position:fixed;inset:0;background:rgba(22,20,15,.94);display:none;align-items:center;justify-content:center;z-index:200;padding:4vh 4vw;flex-direction:column;gap:18px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:92vw;max-height:82vh;object-fit:contain;border-radius:3px;box-shadow:0 10px 50px rgba(0,0,0,.5)}
+.lightbox .lb-cap{color:rgba(250,247,241,.85);font-family:'Fraunces',serif;font-style:italic;font-size:1rem}
+.lightbox .lb-close{position:absolute;top:20px;right:26px;color:#fff;font-size:2rem;cursor:pointer;line-height:1;background:none;border:0}
+.lightbox .lb-nav{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:2.4rem;cursor:pointer;background:none;border:0;padding:0 18px;user-select:none}
+.lightbox .lb-prev{left:8px}.lightbox .lb-next{right:8px}
+
+@media(max-width:880px){
+  .hero-grid,.about-grid,.form-wrap{grid-template-columns:1fr}
+  .nav-links{display:none}
+  header.hero{padding:64px 0 54px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a class="logo" href="#top">Vimara <span>Design</span></a>
+    <div class="nav-links">
+      <a href="#szolgaltatasok">Szolgáltatások</a>
+      <a href="#rolunk">Rólunk</a>
+      <a href="#geppark">Géppark</a>
+      <a href="#kapcsolat">Kapcsolat</a>
+      <a href="#gyik">GYIK</a>
+      <a class="btn" href="tel:+36202894497">📞 +36 20 289 4497</a>
+    </div>
+  </div>
+</nav>
+
+<span id="top"></span>
+<header class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="kicker">Varróműhely · Varroda · Hatvan</div>
+      <h1>We manufacture<br>your ideas</h1>
+      <p class="lead">Családi varroda több évtizedes szakmai tapasztalattal. Ruhajavítás, átalakítás, lakástextil és ipari bérgyártás – milliméterpontos illesztéssel, modern gépparkkal, a határidő pontosságával.</p>
+      <div class="hero-actions">
+        <a class="btn" href="tel:+36202894497">Hívjon most</a>
+        <a class="btn btn-outline" href="#kapcsolat">Időpontkérés</a>
+      </div>
+    </div>
+    <aside class="hero-card">
+      <div class="kicker">Miért minket?</div>
+      <h3>Három ok, amiért minket válasszon</h3>
+      <ul>
+        <li>Több mint 30 év szakmai rutin a varratminőség és az anyagkezelés terén</li>
+        <li>Csúcskategóriás ipari géppark – finom kelmétől a nehezebb textíliákig</li>
+        <li>Pontos határidő, személyre szabott figyelem, kézi végellenőrzés</li>
+      </ul>
+    </aside>
+  </div>
+</header>
+
+<!-- brand ribbon -->
+<div class="ribbon">
+  <div class="container">
+    <span class="tag">„A sikeres gyártás alapja a pontos kommunikáció és a technológiai fegyelem.”</span>
+    <span class="meta">Vimara Design Kft · Hatvan</span>
+  </div>
+</div>
+
+<!-- SZOLGÁLTATÁSOK -->
+<section id="szolgaltatasok">
+  <div class="container">
+    <div class="kicker">Szolgáltatások</div>
+    <h2>Szolgáltatások és árak</h2>
+    <p class="section-intro">Az alapvető javítások (nadrágfelhajtás, cipzárcsere, szűkítés) általában 5 munkanapon belül elkészülnek. Igény esetén felár ellenében gyorsjavítást is vállalunk. Áraink tájékoztató jellegűek – pontos ajánlat a próbán.</p>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="nadrag">Nadrág</button>
+      <button class="tab" data-tab="farmer">Farmer</button>
+      <button class="tab" data-tab="lakas">Lakástextil</button>
+    </div>
+
+    <div class="svc-group active" id="nadrag">
+      <div class="services">
+        <div class="svc"><h3>Nadrág rövidítés</h3><p>Eredeti koptatással vagy rejtett öltéssel – láthatatlan eredmény.</p><div class="price">3 000 – 6 000 Ft</div></div>
+        <div class="svc"><h3>Derékpánt igazítás</h3><p>Derékméret finomhangolása a tökéletes tartáshoz.</p><div class="price">4 500 Ft</div></div>
+        <div class="svc"><h3>Szárbőség igazítás</h3><p>Szár szűkítése vagy tágítása az alakhoz.</p><div class="price">5 000 Ft</div></div>
+        <div class="svc"><h3>Derék gumizás</h3><p>Rugalmas, kényelmes derékvisszaállítás.</p><div class="price">4 500 Ft</div></div>
+        <div class="svc"><h3>Cipzár csere</h3><p>Nadrág zipzárjának cseréje tartós kellékkel.</p><div class="price">4 500 Ft</div></div>
+        <div class="svc"><h3>Nadrág vasalás</h3><p>Professzionális gőzöléssel, éles kötésnyomattal.</p><div class="price">4 500 Ft</div></div>
+        <div class="svc"><h3>Gomb felvarrás</h3><p>Meglazult vagy hiányzó gomb pótlása.</p><div class="price">200 Ft</div></div>
+        <div class="svc"><h3>Gomblyuk készítés</h3><p>Új gomblyuk precíz kivágása.</p><div class="price">700 Ft / db</div></div>
+        <div class="svc"><h3>Patent felvarrás kézzel</h3><p>Kézi patentrögzítés finom kidolgozással.</p><div class="price">1 000 Ft / db</div></div>
+      </div>
+    </div>
+
+    <div class="svc-group" id="farmer">
+      <div class="services">
+        <div class="svc"><h3>Farmer rövidítés + felhajtás</h3><p>Eredeti farmeröltés visszaadása a leavatással.</p><div class="price">3 000 Ft</div></div>
+        <div class="svc"><h3>Felhajtás eredeti megoldással</h3><p>A gyári felhajtás stílusának megtartása.</p><div class="price">5 500 Ft</div></div>
+        <div class="svc"><h3>Ülep stoppolás</h3><p>Kopásos pontok megerősítése, hosszabb élettartam.</p><div class="price">3 500 Ft</div></div>
+        <div class="svc"><h3>Cipzár csere (farmer)</h3><p>Farmer zipzár cseréje ipari géppel.</p><div class="price">3 500 Ft</div></div>
+        <div class="svc"><h3>Farmer vasalás</h3><p>Gőzölés éles kötésnyomattal.</p><div class="price">1 500 Ft</div></div>
+      </div>
+    </div>
+
+    <div class="svc-group" id="lakas">
+      <div class="services">
+        <div class="svc"><h3>Függöny méretre szabás + szegés</h3><p>Pontos hosszúság és tiszta szegély a helyiséghez.</p><div class="price">950 Ft / m</div></div>
+        <div class="svc"><h3>Kész függöny átalakítás</h3><p>Meglévő függöny stílusának, hosszának módosítása.</p><div class="price">3 500 Ft</div></div>
+        <div class="svc"><h3>Behúzó felvarrás</h3><p>Függönybehúzó rögzítése az anyag tetejére.</p><div class="price">5 – 1 000 Ft / m</div></div>
+        <div class="svc"><h3>Tépőzár felvarrás</h3><p>Tépőzár rögzítése textilhez.</p><div class="price">700 Ft / m</div></div>
+        <div class="svc"><h3>Függöny vasalás</h3><p>Gőzölés csíkmentes felülettel.</p><div class="price">200 Ft / m</div></div>
+        <div class="svc"><h3>Terítő szegés</h3><p>Asztalterítő tiszta, tartós szegélyezése.</p><div class="price">600 Ft / m</div></div>
+        <div class="svc"><h3>Terítő vasalás</h3><p>Gőzölés sima, ünnepi felülettel.</p><div class="price">200 Ft / m</div></div>
+        <div class="svc"><h3>Ágytakaró szegés</h3><p>Ágytakaró szegélyezése méretre.</p><div class="price">2 500 Ft / db</div></div>
+      </div>
+    </div>
+
+    <div class="note-band">
+      <div>
+        <div class="kicker">Vállalási határidők</div>
+        <p><strong>Normál átfutási idő: 1 hét.</strong> Sürgősségi (gyors) javítás felára: <strong>+50%</strong>. Kérje ajánlatunkat a próbán!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RÓLUNK -->
+<section id="rolunk" class="alt">
+  <div class="container">
+    <div class="kicker">Rólunk</div>
+    <h2>Bemutatkozás</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>Vállalkozásunk családi alapokon nyugszik, amely a modern üzleti szemlélet és a több évtizedes gyártási tapasztalat találkozásából született. Csapatunkat szakképzett varrónők alkotják, akiknek a textilipar nem csupán munka, hanem hivatás.</p>
+        <p>Szakmai vezetőnk édesanyám, aki <strong>harminc év tapasztalatával</strong> és a „régi iskola” precizitásával felügyeli minden egyes nálunk készült darab kivitelezését. Hiszünk abban, hogy a sikeres gyártás alapja a pontos kommunikáció és a technológiai fegyelem – ezért varrodánkban minden munkafolyamat szigorú minőségellenőrzés mellett zajlik, legyen szó kisszériás darabokról vagy folyamatos bérgyártásról.</p>
+        <p>Célunk, hogy partnereinknek ne csupán egy varrodát, hanem egy megbízható szakmai hátteret biztosítsunk, ahol a minőség és a határidő mindenek előtt áll.</p>
+      </div>
+      <ul class="usp">
+        <li><span class="num">01</span><span><strong>Több évtizedes szakmai tapasztalat és precizitás.</strong> Több mint 30 év szakmai rutinnal a hátunk mögött nem ismerünk kompromisszumot a varratminőség, a pontos illesztések és az anyagkezelés terén.</span></li>
+        <li><span class="num">02</span><span><strong>Modern ipari géppark és rugalmasság.</strong> Csúcskategóriás ipari berendezésekkel dolgozunk, így a finom kelmétől a nehezebb textíliákig garantáljuk a hibátlan, kisszériás és egyedi gyártást is rövid határidővel.</span></li>
+        <li><span class="num">03</span><span><strong>Személyre szabott figyelem és megbízhatóság.</strong> Minden darabnál a részletekre fókuszálunk – nálunk a megbeszélt határidő és a minta szerinti precíz kivitelezés alapkövetelmény.</span></li>
+      </ul>
+    </div>
+    <div class="reviews">
+      <blockquote class="review">„Precíz, gyors és segítőkész csapat. Olyan összetett szabás- és varrásmunkát oldottak meg hibátlanul, amit máshol el sem vállaltak.”<footer>— Elégedett megrendelő</footer></blockquote>
+      <blockquote class="review">„A kis szériás kollekcióm darabjai is tökéletes kidolgozással, az ígért határidőre készültek el.”<footer>— Visszatérő partner</footer></blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- GÉPPARK -->
+<section id="geppark">
+  <div class="container">
+    <div class="kicker">Géppark</div>
+    <h2>Amivel dolgozunk</h2>
+    <p class="section-intro">Ipari gépparkunkat a hatékony, egyenletes minőségű szériagyártásra optimalizáltuk. Ismerjük a különböző alapanyagok tulajdonságait, és beállításainkat mindig az adott textil igényeihez igazítjuk a tökéletes öltéskép érdekében.</p>
+    <div class="machines">
+      <div class="machine"><div class="mname">SIRUBA DL7000</div><div class="muse">Gyorsvarró, vékony és középvastag anyagokhoz, programozható automata funkciók</div></div>
+      <div class="machine"><div class="mname">SIRUBA 747L</div><div class="muse">3 tűs, 5 szálas fedőzőgép, Direct Drive szervomotoros</div></div>
+      <div class="machine"><div class="mname">SIRUBA F007KD</div><div class="muse">Elektronikusan vezérelt reteszelő és gombfelvarró</div></div>
+      <div class="machine"><div class="mname">SIRUBA PK533</div><div class="muse">Négyszálas interlock, vékony és középvastag anyagokhoz</div></div>
+      <div class="machine"><div class="mname">SIRUBA DL8000</div><div class="muse">Új generációs gyorsvarró, rengeteg automata funkcióval</div></div>
+      <div class="machine"><div class="mname">PFAFF 3117</div><div class="muse">Kompakt hurokgép könnyű és közepes anyagokhoz</div></div>
+      <div class="machine"><div class="mname">ROMITEX HL373</div><div class="muse">Mechanikus vezérlésű automata gomblyukazó</div></div>
+      <div class="machine"><div class="mname">TEXI 2YG</div><div class="muse">Gombfelvarró: füles vagy 2/4 lyukas gombhoz</div></div>
+      <div class="machine"><div class="mname">BATTISTELLA NETTUNO 98</div><div class="muse">Ipari gőzfejlesztő vasaló</div></div>
+      <div class="machine"><div class="mname">ROTONDI MINI 45</div><div class="muse">Vákuumos, fűthető vasalóasztal</div></div>
+      <div class="machine"><div class="mname">VEVOR transzferprés</div><div class="muse">60×40 cm, digitális hő- és időszabályozás</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MUNKÁINK -->
+<section id="munkaink" class="alt">
+  <div class="container">
+    <div class="kicker">Munkáink</div>
+    <h2>Production Gallery</h2>
+    <p class="section-intro">Válogatás a varrodánkban készült darabokból, anyagmintákból és kivitelezési részletekből – a „régi iskola” precizitása milliméterről milliméterre.</p>
+    <div class="gallery">
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p10_1.jpg" alt="Vimara Design munkánk – Összeállítás"><figcaption>Összeállítás</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p10_5.jpg" alt="Vimara Design munkánk – Minta"><figcaption>Minta</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p10_6.jpg" alt="Vimara Design munkánk – Minta"><figcaption>Minta</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p10_7.jpg" alt="Vimara Design munkánk – Kész munka"><figcaption>Kész munka</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p11_1.jpg" alt="Vimara Design munkánk – Színválaszték"><figcaption>Színválaszték</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p11_5.jpg" alt="Vimara Design munkánk – Minta"><figcaption>Minta</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p11_6.jpg" alt="Vimara Design munkánk – Minta"><figcaption>Minta</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p11_7.jpg" alt="Vimara Design munkánk – Befejezett darab"><figcaption>Befejezett darab</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p12_1.jpg" alt="Vimara Design munkánk – Szabás"><figcaption>Szabás</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p12_2.jpg" alt="Vimara Design munkánk – Varrott részlet"><figcaption>Varrott részlet</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p12_3.jpg" alt="Vimara Design munkánk – Anyagminta"><figcaption>Anyagminta</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p12_4.jpg" alt="Vimara Design munkánk – Minta"><figcaption>Minta</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p12_5.jpg" alt="Vimara Design munkánk – Minta"><figcaption>Minta</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p12_6.jpg" alt="Vimara Design munkánk – Textil összeállítás"><figcaption>Textil összeállítás</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p12_7.jpg" alt="Vimara Design munkánk – Kész darab"><figcaption>Kész darab</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p13_1.jpg" alt="Vimara Design munkánk – Műhelymunka"><figcaption>Műhelymunka</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p1_1.jpg" alt="Vimara Design munkánk – Anyagközelkép"><figcaption>Anyagközelkép</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p4_1.jpg" alt="Vimara Design munkánk – Minta- és anyagminta"><figcaption>Minta- és anyagminta</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p6_1.jpg" alt="Vimara Design munkánk – Szabászati munka"><figcaption>Szabászati munka</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p6_2.jpg" alt="Vimara Design munkánk – Varrott részlet"><figcaption>Varrott részlet</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p6_3.jpg" alt="Vimara Design munkánk – Textil összeállítás"><figcaption>Textil összeállítás</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p6_4.jpg" alt="Vimara Design munkánk – Anyagminta"><figcaption>Anyagminta</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p6_5.jpg" alt="Vimara Design munkánk – Minta közelről"><figcaption>Minta közelről</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p6_6.jpg" alt="Vimara Design munkánk – Szín- és anyagválaszték"><figcaption>Szín- és anyagválaszték</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p6_7.jpg" alt="Vimara Design munkánk – Kézi munka"><figcaption>Kézi munka</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p7_1.jpg" alt="Vimara Design munkánk – Kivitelezés"><figcaption>Kivitelezés</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p7_2.jpg" alt="Vimara Design munkánk – Varrott felület"><figcaption>Varrott felület</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p7_3.jpg" alt="Vimara Design munkánk – Részlet"><figcaption>Részlet</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p7_4.jpg" alt="Vimara Design munkánk – Anyagminta"><figcaption>Anyagminta</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p7_5.jpg" alt="Vimara Design munkánk – Minta közelről"><figcaption>Minta közelről</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p7_6.jpg" alt="Vimara Design munkánk – Textil munka"><figcaption>Textil munka</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p7_7.jpg" alt="Vimara Design munkánk – Befejezett darab"><figcaption>Befejezett darab</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p8_1.jpg" alt="Vimara Design munkánk – Szabás"><figcaption>Szabás</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p8_7.jpg" alt="Vimara Design munkánk – Kész munka"><figcaption>Kész munka</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p9_1.jpg" alt="Vimara Design munkánk – Gyártás"><figcaption>Gyártás</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p9_4.jpg" alt="Vimara Design munkánk – Varrott részlet"><figcaption>Varrott részlet</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p9_5.jpg" alt="Vimara Design munkánk – Minta"><figcaption>Minta</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p9_6.jpg" alt="Vimara Design munkánk – Textil"><figcaption>Textil</figcaption></figure>
+      <figure class="gitem"><img loading="lazy" src="gallery/img_p9_7.jpg" alt="Vimara Design munkánk – Befejezett darab"><figcaption>Befejezett darab</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- KAPCSOLAT -->
+<section id="kapcsolat" class="alt">
+  <div class="container form-wrap">
+    <div>
+      <div class="kicker">Kapcsolat</div>
+      <h2>Kapcsolat &amp; időpontkérés</h2>
+      <br>
+      <ul class="contact-list">
+        <li><span class="ico">📍</span> 3000 Hatvan, Horváth Mihály út 19.<br><small>A fő út mentén, mögötte a lakótelepen.</small></li>
+        <li><span class="ico">📞</span> <a href="tel:+36202894497">+36 20 289 4497</a></li>
+        <li><span class="ico">✉️</span> <a href="mailto:vimara.kft@gmail.com">vimara.kft@gmail.com</a></li>
+      </ul>
+      <h3 style="margin-top:28px;font-weight:500">Nyitvatartás</h3>
+      <table class="hours-table">
+        <tr><td>Hétfő – Péntek</td><td>08:00 – 16:00</td></tr>
+        <tr><td>Szombat</td><td>09:00 – 13:00</td></tr>
+        <tr><td>Vasárnap</td><td>Zárva</td></tr>
+      </table>
+      <div class="social-row">
+        <a href="https://www.facebook.com/share/1JXrX75Fma/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.instagram.com/vimara_design?igsi=MXJpN2N2eG9vODFzdQ%3D%3D&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <form onsubmit="event.preventDefault(); this.innerHTML='<p style=\'font-size:1.15rem;font-weight:500;font-family:Fraunces,serif\'>Köszönjük! Jelentkezését rögzítettük, hamarosan felvesszük Önnel a kapcsolatot.</p>';">
+      <h3 style="font-weight:500">Időpontkérés</h3>
+      <div><label for="nev">Név *</label><input id="nev" required placeholder="Az Ön neve"></div>
+      <div><label for="tel">Telefonszám *</label><input id="tel" type="tel" required placeholder="+36 ... "></div>
+      <div><label for="email">E-mail</label><input id="email" type="email" placeholder="valami@pelda.hu"></div>
+      <div>
+        <label for="szolg">Szolgáltatás</label>
+        <select id="szolg">
+          <option>Nadrág javítás / rövidítés</option>
+          <option>Farmer javítás / átalakítás</option>
+          <option>Cipzár csere</option>
+          <option>Méretre igazítás, szűkítés</option>
+          <option>Lakástextil (függöny, terítő, ágytakaró)</option>
+          <option>Bérgyártás / egyedi megrendelés</option>
+          <option>Egyéb</option>
+        </select>
+      </div>
+      <div><label for="megj">Megjegyzés</label><textarea id="megj" rows="3" placeholder="Miről van szó? Pl.: farmer nadrág rövidítés"></textarea></div>
+      <button class="btn" type="submit">Időpont igénylése</button>
+    </form>
+  </div>
+</section>
+
+<!-- GYIK -->
+<section id="gyik">
+  <div class="container faq-wrap">
+    <div class="kicker">GYIK</div>
+    <h2>Gyakori kérdések</h2>
+    <br>
+    <details open>
+      <summary>Kell előre időpontot foglalni ruhajavításhoz, vagy csak bevihetem a ruhát?</summary>
+      <p>Nyitvatartási időben bármikor behozhatod a javítandó darabot előzetes bejelentkezés nélkül is. Bonyolultabb méretre igazítás (pl. alkalmi ruha, öltöny) esetén a pontos próbához javasoljuk az előzetes egyeztetést.</p>
+    </details>
+    <details>
+      <summary>Mennyi idő alatt készül el egy átalakítás vagy javítás? Van lehetőség sürgősségi munkára?</summary>
+      <p>Az alapvető javítások (pl. nadrágfelhajtás, cipzárcsere, szűkítés) általában 5 munkanapon belül elkészülnek. Igény esetén felár ellenében gyorsjavítást is vállalunk.</p>
+    </details>
+    <details>
+      <summary>Bármilyen anyagú ruhát javítotok, és kell hozzá saját kelléket (pl. cipzárt, cérnát) vinni?</summary>
+      <p>Ipari gépparkunknak köszönhetően finom kelmékkel, rugalmas anyagokkal, kötöttáruval és vastagabb textilekkel is dolgozunk. Alapvető kellékeket mi szerzünk be, de egyedi vagy speciális igény esetén hozott kellékkel is szívesen dolgozunk.</p>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="fbrand">Vimara <span>Design</span></div>
+        We manufacture your ideas.
+      </div>
+      <div>
+        3000 Hatvan, Horváth Mihály út 19.<br>
+        <a href="tel:+36202894497">+36 20 289 4497</a> · <a href="mailto:vimara.kft@gmail.com">vimara.kft@gmail.com</a>
+      </div>
+      <div>
+        <a href="https://www.facebook.com/share/1JXrX75Fma/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a> ·
+        <a href="https://www.instagram.com/vimara_design?igsi=MXJpN2N2eG9vODFzdQ%3D%3D&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <div class="foot-meta">
+      <span>© 2026 Vimara Design Kft · Minden jog fenntartva</span>
+      <span>Hétfő–Péntek 8–16 · Szombat 9–13</span>
+    </div>
+  </div>
+</footer>
+
+<a href="tel:+36202894497" style="position:fixed;bottom:18px;right:18px;background:var(--ink);color:#fff;border-radius:999px;padding:14px 22px;font-weight:500;text-decoration:none;box-shadow:0 6px 22px rgba(22,20,15,.35);display:none;z-index:99" id="mobilecall">📞 Hívás most</a>
+
+<!-- Lightbox a galériához -->
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lbClose" aria-label="Bezárás">&times;</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Előző">&#8249;</button>
+  <img id="lbImg" src="" alt="">
+  <div class="lb-cap" id="lbCap"></div>
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Következő">&#8250;</button>
+</div>
+
+<style>
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease, transform .7s cubic-bezier(.22,.61,.36,1)}
+.reveal.visible{opacity:1;transform:none}
+</style>
+<script>
+(function(){
+  // szekciók finoman úsznak be
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('visible'); });
+  },{threshold:.12});
+  document.querySelectorAll('section > .container, header.hero .container').forEach(function(el){
+    el.classList.add('reveal'); obs.observe(el);
+  });
+
+  // tabok
+  var tabs = document.querySelectorAll('.tab');
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      tabs.forEach(function(x){x.classList.remove('active')});
+      document.querySelectorAll('.svc-group').forEach(function(g){g.classList.remove('active')});
+      t.classList.add('active');
+      document.getElementById(t.getAttribute('data-tab')).classList.add('active');
+    });
+  });
+})();
+</script>
+<script>
+if(matchMedia('(max-width:880px)').matches){document.getElementById('mobilecall').style.display='block'}
+</script>
+<script>
+(function(){
+  var lb=document.getElementById('lightbox');
+  var lbImg=document.getElementById('lbImg');
+  var lbCap=document.getElementById('lbCap');
+  var items=Array.prototype.slice.call(document.querySelectorAll('.gitem'));
+  var idx=-1;
+  function show(i){
+    if(i<0)i=items.length-1; if(i>=items.length)i=0;
+    idx=i;
+    var img=items[i].querySelector('img');
+    lbImg.src=img.src;
+    lbImg.alt=img.alt;
+    lbCap.textContent=items[i].querySelector('figcaption')?items[i].querySelector('figcaption').textContent:'';
+  }
+  items.forEach(function(it,i){
+    it.addEventListener('click',function(){lb.classList.add('open');show(i);});
+  });
+  document.getElementById('lbClose').addEventListener('click',function(){lb.classList.remove('open')});
+  document.getElementById('lbPrev').addEventListener('click',function(e){e.stopPropagation();show(idx-1)});
+  document.getElementById('lbNext').addEventListener('click',function(e){e.stopPropagation();show(idx+1)});
+  lb.addEventListener('click',function(e){if(e.target===lb)lb.classList.remove('open')});
+  addEventListener('keydown',function(e){
+    if(!lb.classList.contains('open'))return;
+    if(e.key==='Escape')lb.classList.remove('open');
+    if(e.key==='ArrowLeft')show(idx-1);
+    if(e.key==='ArrowRight')show(idx+1);
+  });
+})();
+</script>
+</body>
+</html>
