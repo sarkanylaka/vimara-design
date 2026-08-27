@@ -220,10 +220,11 @@ footer .fbrand span{color:var(--bronze)}
 @keyframes drift{0%,100%{transform:translate(0,0) rotate(0deg)}33%{transform:translate(18px,-14px) rotate(8deg)}66%{transform:translate(-12px,12px) rotate(-6deg)}}
 .hero .container{position:relative;z-index:1}
 /* varrásminta háttér */
-.hero-stitch{position:absolute;inset:0;z-index:0;pointer-events:none;
+.hero-stitch{position:absolute;inset:-60px 0;z-index:0;pointer-events:none;
   background-image:url('stitch-pattern.svg');
   background-size:120px 120px;
   opacity:.10;
+  will-change:transform;
   -webkit-mask-image:radial-gradient(ellipse at 30% 20%, #000 0%, transparent 75%);
   mask-image:radial-gradient(ellipse at 30% 20%, #000 0%, transparent 75%);
 }
@@ -552,6 +553,24 @@ footer .fbrand span{color:var(--bronze)}
 </style>
 <script>
 (function(){
+  // ===== PARALLAX: a hero háttére lassabban mozog, mint a tartalom =====
+  var hero = document.querySelector('header.hero');
+  var stitch = document.querySelector('.hero-stitch');
+  var orbits = document.querySelector('.hero-orbits');
+  var ticking=false;
+  function parallax(){
+    ticking=false;
+    if(!hero || window.scrollY > hero.offsetHeight) return; // csak a hero látható részén
+    var y = window.scrollY;
+    if(stitch) stitch.style.transform = 'translate3d(0,'+(y*0.35)+'px,0)';
+    if(orbits) orbits.style.transform = 'translate3d(0,'+(y*0.55)+'px,0)';
+  }
+  function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(parallax); } }
+  if(hero){
+    addEventListener('scroll', onScroll, {passive:true});
+    parallax();
+  }
+
   // szekciók finoman úsznak be + kártyás grid staggered
   var obs = new IntersectionObserver(function(entries){
     entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('visible'); });
