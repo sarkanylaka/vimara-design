@@ -105,10 +105,13 @@ blockquote footer{font-style:normal;font-family:'Inter',sans-serif;font-weight:5
 @media(min-width:760px){.reviews{grid-template-columns:1fr 1fr}}
 
 /* MACHINES */
-.machines{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden}
-.machine{background:var(--cream);padding:22px 24px}
+.machines{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.machine{background:var(--cream);border:1px solid var(--line);border-radius:3px;overflow:hidden;display:flex;flex-direction:column}
+.alt .machine{background:var(--beige)}
+.machine img{width:100%;height:200px;object-fit:cover;display:block;background:var(--beige)}
+.machine .mc-body{padding:18px 20px}
 .machine .mname{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--ink)}
-.machine .muse{font-size:.82rem;color:var(--muted);font-weight:300;margin-top:4px}
+.machine .muse{font-size:.82rem;color:var(--muted);font-weight:300;margin-top:6px}
 
 /* FORM / CONTACT */
 .form-wrap{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:start}
@@ -308,17 +311,17 @@ footer .fbrand span{color:var(--bronze)}
     <h2>Amivel dolgozunk</h2>
     <p class="section-intro">Ipari gépparkunkat a hatékony, egyenletes minőségű szériagyártásra optimalizáltuk. Ismerjük a különböző alapanyagok tulajdonságait, és beállításainkat mindig az adott textil igényeihez igazítjuk a tökéletes öltéskép érdekében.</p>
     <div class="machines">
-      <div class="machine"><div class="mname">SIRUBA DL7000</div><div class="muse">Gyorsvarró, vékony és középvastag anyagokhoz, programozható automata funkciók</div></div>
-      <div class="machine"><div class="mname">SIRUBA 747L</div><div class="muse">3 tűs, 5 szálas fedőzőgép, Direct Drive szervomotoros</div></div>
-      <div class="machine"><div class="mname">SIRUBA F007KD</div><div class="muse">Elektronikusan vezérelt reteszelő és gombfelvarró</div></div>
-      <div class="machine"><div class="mname">SIRUBA PK533</div><div class="muse">Négyszálas interlock, vékony és középvastag anyagokhoz</div></div>
-      <div class="machine"><div class="mname">SIRUBA DL8000</div><div class="muse">Új generációs gyorsvarró, rengeteg automata funkcióval</div></div>
-      <div class="machine"><div class="mname">PFAFF 3117</div><div class="muse">Kompakt hurokgép könnyű és közepes anyagokhoz</div></div>
-      <div class="machine"><div class="mname">ROMITEX HL373</div><div class="muse">Mechanikus vezérlésű automata gomblyukazó</div></div>
-      <div class="machine"><div class="mname">TEXI 2YG</div><div class="muse">Gombfelvarró: füles vagy 2/4 lyukas gombhoz</div></div>
-      <div class="machine"><div class="mname">BATTISTELLA NETTUNO 98</div><div class="muse">Ipari gőzfejlesztő vasaló</div></div>
-      <div class="machine"><div class="mname">ROTONDI MINI 45</div><div class="muse">Vákuumos, fűthető vasalóasztal</div></div>
-      <div class="machine"><div class="mname">VEVOR transzferprés</div><div class="muse">60×40 cm, digitális hő- és időszabályozás</div></div>
+      <div class="machine"><img loading="lazy" src="machines/siruba_dl7000.jpg" alt="SIRUBA DL7000 ipari gyorsvarró"><div class="mc-body"><div class="mname">SIRUBA DL7000</div><div class="muse">Gyorsvarró, vékony és középvastag anyagokhoz, programozható automata funkciók</div></div></div>
+      <div class="machine"><img loading="lazy" src="machines/siruba_747l.jpg" alt="SIRUBA 747L overlock varrógép"><div class="mc-body"><div class="mname">SIRUBA 747L</div><div class="muse">3 tűs, 5 szálas fedőzőgép, Direct Drive szervomotoros</div></div></div>
+      <div class="machine"><img loading="lazy" src="machines/siruba_f007kd.jpg" alt="SIRUBA F007KD fedőző varrógép"><div class="mc-body"><div class="mname">SIRUBA F007KD</div><div class="muse">Elektronikusan vezérelt reteszelő és gombfelvarró</div></div></div>
+      <div class="machine"><img loading="lazy" src="machines/siruba_pk533.jpg" alt="SIRUBA PK533 bartack varrógép"><div class="mc-body"><div class="mname">SIRUBA PK533</div><div class="muse">Négyszálas interlock, vékony és középvastag anyagokhoz</div></div></div>
+      <div class="machine"><img loading="lazy" src="machines/siruba_dl8000.jpg" alt="SIRUBA DL8000 ipari gyorsvarró"><div class="mc-body"><div class="mname">SIRUBA DL8000</div><div class="muse">Új generációs gyorsvarró, rengeteg automata funkcióval</div></div></div>
+      <div class="machine"><img loading="lazy" src="machines/pfaff_3117.jpg" alt="PFAFF 3117 hurokgép"><div class="mc-body"><div class="mname">PFAFF 3117</div><div class="muse">Kompakt hurokgép könnyű és közepes anyagokhoz</div></div></div>
+      <div class="machine"><img loading="lazy" src="machines/romitex_hl373.jpg" alt="ROMITEX HL373 gombfelvarró"><div class="mc-body"><div class="mname">ROMITEX HL373</div><div class="muse">Mechanikus vezérlésű automata gomblyukazó</div></div></div>
+      <div class="machine"><img loading="lazy" src="machines/texi_2yg.jpg" alt="TEXI 2YG gombfelvarró"><div class="mc-body"><div class="mname">TEXI 2YG</div><div class="muse">Gombfelvarró: füles vagy 2/4 lyukas gombhoz</div></div></div>
+      <div class="machine"><img loading="lazy" src="machines/battistella_nettuno98.jpg" alt="BATTISTELLA NETTUNO 98 gőzvasaló rendszer"><div class="mc-body"><div class="mname">BATTISTELLA NETTUNO 98</div><div class="muse">Ipari gőzfejlesztő vasaló</div></div></div>
+      <div class="machine"><img loading="lazy" src="machines/rotondi_mini45.jpg" alt="ROTONDI MINI 45 gőzvasaló"><div class="mc-body"><div class="mname">ROTONDI MINI 45</div><div class="muse">Vákuumos, fűthető vasalóasztal</div></div></div>
+      <div class="machine"><img loading="lazy" src="machines/vevor_pres.jpg" alt="VEVOR transzferprés"><div class="mc-body"><div class="mname">VEVOR transzferprés</div><div class="muse">60×40 cm, digitális hő- és időszabályozás</div></div></div>
     </div>
   </div>
 </section>
