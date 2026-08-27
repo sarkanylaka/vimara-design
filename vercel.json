@@ -1,6 +1,3 @@
 {
-  "version": 2,
-  "buildCommand": null,
-  "outputDirectory": ".",
-  "middleware": "middleware.js"
+  "version": 2
 }
