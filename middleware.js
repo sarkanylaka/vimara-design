@@ -70,6 +70,15 @@ export default async function (req) {
     return fetch(req);
   }
 
+  // Statikus fájlok (képek, css, js, svg, fontok) mindig engedélyezve,
+  // hogy a galéria/gépképek és stílusok jelszó nélkül is betöltődjenek.
+  if (url.pathname.startsWith('/machines/') ||
+      url.pathname.startsWith('/gallery/') ||
+      url.pathname === '/stitch-pattern.svg' ||
+      /\.(jpg|jpeg|png|gif|webp|svg|css|js|ico|woff2?|ttf|otf)$/i.test(url.pathname)) {
+    return fetch(req);
+  }
+
   // Nincs belépve -> kapu
   return unlockPage();
 }
