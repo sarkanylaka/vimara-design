@@ -166,6 +166,65 @@ footer .fbrand span{color:var(--bronze)}
 .lightbox .lb-nav{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:2.4rem;cursor:pointer;background:none;border:0;padding:0 18px;user-select:none}
 .lightbox .lb-prev{left:8px}.lightbox .lb-next{right:8px}
 
+/* ===== ANIMÁCIÓK (prémium, diszkrét) ===== */
+/* hero betöltési fade-up staggered */
+@keyframes heroIn{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes fadeLine{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.hero .kicker,.hero h1,.hero .lead,.hero .hero-actions,.hero .hero-card{
+  opacity:0;animation:heroIn .9s cubic-bezier(.22,.61,.36,1) forwards;
+}
+.hero .kicker{animation-delay:.05s}
+.hero h1{animation-delay:.18s}
+.hero .hero-card{animation-delay:.34s}
+.hero .lead{animation-delay:.46s}
+.hero .hero-actions{animation-delay:.6s}
+.hero .hairline{transform-origin:left center;animation:fadeLine 1s .3s cubic-bezier(.22,.61,.36,1) forwards;transform:scaleX(0)}
+
+/* scroll-reveal finomítás */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s ease, transform .8s cubic-bezier(.22,.61,.36,1)}
+.reveal.visible{opacity:1;transform:none}
+/* kártyák sorban */
+.reveal-cards > *{opacity:0;transform:translateY(26px);transition:opacity .6s ease, transform .6s cubic-bezier(.22,.61,.36,1)}
+.reveal-cards.visible > *{opacity:1;transform:none}
+.reveal-cards.visible > *:nth-child(2){transition-delay:.08s}
+.reveal-cards.visible > *:nth-child(3){transition-delay:.16s}
+.reveal-cards.visible > *:nth-child(4){transition-delay:.24s}
+.reveal-cards.visible > *:nth-child(5){transition-delay:.32s}
+.reveal-cards.visible > *:nth-child(6){transition-delay:.40s}
+.reveal-cards.visible > *:nth-child(7){transition-delay:.48s}
+.reveal-cards.visible > *:nth-child(8){transition-delay:.56s}
+.reveal-cards.visible > *:nth-child(9){transition-delay:.64s}
+.reveal-cards.visible > *:nth-child(10){transition-delay:.72s}
+.reveal-cards.visible > *:nth-child(11){transition-delay:.80s}
+.reveal-cards.visible > *:nth-child(12){transition-delay:.88s}
+
+/* gombok shine */
+.btn{position:relative;overflow:hidden}
+.btn::after{content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.28),transparent);
+  transform:skewX(-18deg);transition:left .6s ease}
+.btn:hover::after{left:130%}
+
+/* kártya hover lift */
+.svc,.machine,.gitem{transition:transform .35s cubic-bezier(.22,.61,.36,1), box-shadow .35s ease}
+.svc:hover,.machine:hover{transform:translateY(-6px);box-shadow:0 14px 34px rgba(22,20,15,.10)}
+.machine{transition:transform .35s cubic-bezier(.22,.61,.36,1), box-shadow .35s ease}
+
+/* hero lebegő bronz vonalak */
+.hero-orbits{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.hero-orbits span{position:absolute;border:1px solid rgba(176,141,87,.22);border-radius:50%;
+  animation:drift 18s ease-in-out infinite}
+.hero-orbits span:nth-child(1){width:380px;height:380px;top:-90px;right:-60px;animation-delay:0s}
+.hero-orbits span:nth-child(2){width:560px;height:560px;top:40px;right:-160px;animation-delay:-6s;opacity:.7}
+.hero-orbits span:nth-child(3){width:240px;height:240px;bottom:-60px;left:-40px;animation-delay:-11s;opacity:.6}
+@keyframes drift{0%,100%{transform:translate(0,0) rotate(0deg)}33%{transform:translate(18px,-14px) rotate(8deg)}66%{transform:translate(-12px,12px) rotate(-6deg)}}
+.hero .container{position:relative;z-index:1}
+
+@media(prefers-reduced-motion: reduce){
+  *{animation:none!important;transition:none!important}
+  .hero .kicker,.hero h1,.hero .lead,.hero .hero-actions,.hero .hero-card{opacity:1}
+  .reveal,.reveal-cards > *{opacity:1;transform:none}
+}
 @media(max-width:880px){
   .hero-grid,.about-grid,.form-wrap{grid-template-columns:1fr}
   .nav-links{display:none}
@@ -191,6 +250,7 @@ footer .fbrand span{color:var(--bronze)}
 
 <span id="top"></span>
 <header class="hero">
+  <div class="hero-orbits" aria-hidden="true"><span></span><span></span><span></span></div>
   <div class="container hero-grid">
     <div>
       <div class="kicker">Varróműhely · Varroda · Hatvan</div>
@@ -291,7 +351,7 @@ footer .fbrand span{color:var(--bronze)}
         <p>Szakmai vezetőnk édesanyám, aki <strong>harminc év tapasztalatával</strong> és a „régi iskola” precizitásával felügyeli minden egyes nálunk készült darab kivitelezését. Hiszünk abban, hogy a sikeres gyártás alapja a pontos kommunikáció és a technológiai fegyelem – ezért varrodánkban minden munkafolyamat szigorú minőségellenőrzés mellett zajlik, legyen szó kisszériás darabokról vagy folyamatos bérgyártásról.</p>
         <p>Célunk, hogy partnereinknek ne csupán egy varrodát, hanem egy megbízható szakmai hátteret biztosítsunk, ahol a minőség és a határidő mindenek előtt áll.</p>
       </div>
-      <ul class="usp">
+      <ul class="usp reveal-cards">
         <li><span class="num">01</span><span><strong>Több évtizedes szakmai tapasztalat és precizitás.</strong> Több mint 30 év szakmai rutinnal a hátunk mögött nem ismerünk kompromisszumot a varratminőség, a pontos illesztések és az anyagkezelés terén.</span></li>
         <li><span class="num">02</span><span><strong>Modern ipari géppark és rugalmasság.</strong> Csúcskategóriás ipari berendezésekkel dolgozunk, így a finom kelmétől a nehezebb textíliákig garantáljuk a hibátlan, kisszériás és egyedi gyártást is rövid határidővel.</span></li>
         <li><span class="num">03</span><span><strong>Személyre szabott figyelem és megbízhatóság.</strong> Minden darabnál a részletekre fókuszálunk – nálunk a megbeszélt határidő és a minta szerinti precíz kivitelezés alapkövetelmény.</span></li>
@@ -310,7 +370,7 @@ footer .fbrand span{color:var(--bronze)}
     <div class="kicker">Géppark</div>
     <h2>Amivel dolgozunk</h2>
     <p class="section-intro">Ipari gépparkunkat a hatékony, egyenletes minőségű szériagyártásra optimalizáltuk. Ismerjük a különböző alapanyagok tulajdonságait, és beállításainkat mindig az adott textil igényeihez igazítjuk a tökéletes öltéskép érdekében.</p>
-    <div class="machines">
+    <div class="machines reveal-cards">
       <div class="machine"><img loading="lazy" src="machines/siruba_dl7000.jpg" alt="SIRUBA DL7000 ipari gyorsvarró"><div class="mc-body"><div class="mname">SIRUBA DL7000</div><div class="muse">Gyorsvarró, vékony és középvastag anyagokhoz, programozható automata funkciók</div></div></div>
       <div class="machine"><img loading="lazy" src="machines/siruba_747l.jpg" alt="SIRUBA 747L overlock varrógép"><div class="mc-body"><div class="mname">SIRUBA 747L</div><div class="muse">3 tűs, 5 szálas fedőzőgép, Direct Drive szervomotoros</div></div></div>
       <div class="machine"><img loading="lazy" src="machines/siruba_f007kd.jpg" alt="SIRUBA F007KD fedőző varrógép"><div class="mc-body"><div class="mname">SIRUBA F007KD</div><div class="muse">Elektronikusan vezérelt reteszelő és gombfelvarró</div></div></div>
@@ -483,12 +543,17 @@ footer .fbrand span{color:var(--bronze)}
 </style>
 <script>
 (function(){
-  // szekciók finoman úsznak be
+  // szekciók finoman úsznak be + kártyás grid staggered
   var obs = new IntersectionObserver(function(entries){
     entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('visible'); });
   },{threshold:.12});
+  // sima reveal (szekciók)
   document.querySelectorAll('section > .container, header.hero .container').forEach(function(el){
     el.classList.add('reveal'); obs.observe(el);
+  });
+  // kártyás grid: a konténerre nem reveal, csak a gyerekekre staggered
+  document.querySelectorAll('.reveal-cards').forEach(function(el){
+    obs.observe(el);
   });
 
   // tabok
